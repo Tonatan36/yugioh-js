@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewerton Natan | Yu-Gi-Oh! Jogo de Cartas</title>
+    <!-- Fontes e Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/buttons.css">
+</head>
+<body>
+
+    <div class="bg-video">
+        <video class="video" autoplay loop muted>
+            <source src="./src/assets/video/yugi.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="container">
+        <!-- Placar e Informações do Jogo -->
+        <div class="container__left">
+            <div class="score_box frame">
+                <span id="score_points">Win: 0 | Lose: 0</span>
+            </div>
+            <div class="menu__verso">
+                <div id="card-image-block" class="card-box">
+                    <img id="card-image" src="" alt="Carta Selecionada">
+                </div>
+                <div id="card-details" class="card-details-box">
+                    <id id="card-name" class="card-name"></id>
+                    <id id="card-type" class="card-type"></id>
+                </div>
+            </div>
+            <div class="button-box">
+                <button id="next-duel" class="btn" style="display: none;" onclick="resetDuel()">Próximo Duelo</button>
+            </div>
+        </div>
+
+        <!-- Campo de Batalha -->
+        <div class="container__right">
+            <div class="card-box__container">
+                <div class="card-lined">
+                    <img id="computer-card" class="card-field" src="./src/assets/icons/card-back.png" alt="Carta do Computador">
+                </div>
+                <div class="duel-versus">
+                    <img id="duel-result-img" src="./src/assets/icons/swords.png" alt="Espadas de Duelo" height="100">
+                </div>
+                <div class="card-lined">
+                    <img id="player-card" class="card-field" src="./src/assets/icons/card-back.png" alt="Carta do Jogador">
+                </div>
+            </div>
+            
+            <!-- Mão do Jogador -->
+            <div id="player-cards" class="card-box__container"></div>
+        </div>
+    </div>
+
+    <!-- Script Principal -->
+    <script src="./src/scripts/engine.js"></script>
+</body>
+</html>
